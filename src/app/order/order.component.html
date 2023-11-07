@@ -1,0 +1,22 @@
+<h1>Variedades disponibles:</h1>
+
+<div *ngFor="let vari of variedad" class="variedades">
+  <div class="variedad">
+    <p>{{ vari.nombre }}</p> 
+    <p (click)="pushPedido(vari)" class="add">Agregar variedad</p>
+  </div>
+</div>
+
+<h1>Modifica la cantidad por variedad</h1>
+<div class="pedido" *ngFor="let pedid of pedido">
+  <div  class="pedidoContent"> 
+    <div class="contentCantidadNombre">
+      <p> {{ pedid.nombre }} </p>
+    </div>
+    <div class="contentCantidadPedido">
+      <p (click)="decreaseQuantity(pedid)" class="less">-</p>
+      <p class="canti"> {{ pedid.cantidad }} </p>
+      <p (click)="addMoreCant(pedid)" class="more">+</p>
+    </div>
+  </div>
+</div>
